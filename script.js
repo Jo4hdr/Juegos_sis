@@ -1,329 +1,147 @@
-/* =========================================
-   LISTA DE JUEGOS
-========================================= */
-
-const juegos = [
-
-    {
-        nombre: "2048",
-        autor: "Por agregar",
-        icono: "🔢",
-        categoria: "Puzzle",
-        carpeta: "2048_ver2-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Angelo's Slime Blast",
-        autor: "Por agregar",
-        icono: "🟢",
-        categoria: "Arcade",
-        carpeta: "Angelo-s_Slime_Blast-main/Version 1.1"
-        archivo: "angelo's_slime_blast1.html"
-    },
-
-    {
-        nombre: "Game JavaScript",
-        autor: "Por agregar",
-        icono: "🎮",
-        categoria: "Acción",
-        carpeta: "Game_JavaScript-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Introduction JavaScript",
-        autor: "Por agregar",
-        icono: "💻",
-        categoria: "JavaScript",
-        carpeta: "introduction_java_script-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "JavaScript",
-        autor: "Por agregar",
-        icono: "🟨",
-        categoria: "JavaScript",
-        carpeta: "java_script-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Tetris",
-        autor: "Por agregar",
-        icono: "🧱",
-        categoria: "Puzzle",
-        carpeta: "javascript_tetris-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "JavaScript Game",
-        autor: "Por agregar",
-        icono: "🎮",
-        categoria: "Arcade",
-        carpeta: "javascript-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Juegitos HTML",
-        autor: "Por agregar",
-        icono: "🌐",
-        categoria: "Clásico",
-        carpeta: "juegitos_html-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Juego Java",
-        autor: "Por agregar",
-        icono: "☕",
-        categoria: "Clásico",
-        carpeta: "juego_java-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Juego JavaScript",
-        autor: "Por agregar",
-        icono: "🎮",
-        categoria: "Acción",
-        carpeta: "Juego_JavaScript-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Pac-Man",
-        autor: "Por agregar",
-        icono: "👾",
-        categoria: "Arcade",
-        carpeta: "juego_pacman-main",
-        archivo: "index.html"
-    },
-
-    {
-        nombre: "Juego Java",
-        autor: "Por agregar",
-        icono: "☕",
-        categoria: "Clásico",
-        carpeta: "juego-java-main",
-        archivo: "index.html"
-    },
+const buscador = document.getElementById("buscador");
 
-    {
-        nombre: "Mi Juego",
-        autor: "Por agregar",
-        icono: "🎯",
-        categoria: "Arcade",
-        carpeta: "mi_juego-main",
-        archivo: "index.html"
-    },
+const juegos = document.querySelectorAll(".juego");
 
-    {
-        nombre: "Snake",
-        autor: "Por agregar",
-        icono: "🐍",
-        categoria: "Arcade",
-        carpeta: "Snake-main",
-        archivo: "index.html"
-    },
+const contador = document.getElementById("contadorVisible");
 
-    {
-        nombre: "Space Game",
-        autor: "Por agregar",
-        icono: "🚀",
-        categoria: "Acción",
-        carpeta: "space_game-main",
-        archivo: "index.html"
-    },
+const sinResultados =
+    document.getElementById("sinResultados");
 
-    {
-        nombre: "Sudoku",
-        autor: "Por agregar",
-        icono: "🧩",
-        categoria: "Puzzle",
-        carpeta: "Sudoku-main",
-        archivo: "index.html"
-    },
 
-    {
-        nombre: "Versión 2 Juego",
-        autor: "Por agregar",
-        icono: "🎮",
-        categoria: "Arcade",
-        carpeta: "version2_juego-main",
-        archivo: "index.html"
-    }
+// ==========================================
+// BUSCADOR
+// ==========================================
 
-];
+buscador.addEventListener("input", function () {
 
+    const texto =
+        buscador.value
+            .toLowerCase()
+            .trim();
 
-/* =========================================
-   ELEMENTOS DEL HTML
-========================================= */
 
-const contenedor =
-    document.getElementById("contenedor-juegos");
+    let encontrados = 0;
 
-const buscador =
-    document.getElementById("buscar");
 
-const cantidad =
-    document.getElementById("cantidad");
+    juegos.forEach(function (juego) {
 
+        const nombre =
+            juego.dataset.nombre.toLowerCase();
 
-/* =========================================
-   MOSTRAR JUEGOS
-========================================= */
+        const categoria =
+            juego.dataset.categoria.toLowerCase();
 
-function mostrarJuegos(lista) {
+        const contenido =
+            juego.textContent.toLowerCase();
 
-    contenedor.innerHTML = "";
 
+        if (
+            nombre.includes(texto) ||
+            categoria.includes(texto) ||
+            contenido.includes(texto)
+        ) {
 
-    /* Si no encuentra juegos */
+            juego.style.display = "flex";
 
-    if (lista.length === 0) {
+            encontrados++;
 
-        contenedor.innerHTML = `
+        } else {
 
-            <div class="sin-resultados">
+            juego.style.display = "none";
 
-                <h3>
-                    😕 No encontramos ese juego
-                </h3>
-
-                <p>
-                    Intenta buscar con otro nombre.
-                </p>
-
-            </div>
-
-        `;
-
-        cantidad.textContent =
-            "0 juegos encontrados";
-
-        return;
-    }
-
-
-    /* Actualizar cantidad */
-
-    cantidad.textContent =
-        `${lista.length} juego(s) disponible(s)`;
-
-
-    /* Crear cada tarjeta */
-
-    lista.forEach(function(juego) {
-
-        const tarjeta =
-            document.createElement("article");
-
-
-        tarjeta.classList.add("tarjeta");
-
-
-        /* Ruta del juego */
-
-        const ruta =
-            juego.carpeta +
-            "/" +
-            juego.archivo;
-
-
-        tarjeta.innerHTML = `
-
-            <div class="parte-superior">
-
-                <div class="icono">
-                    ${juego.icono}
-                </div>
-
-                <span class="categoria">
-                    ${juego.categoria}
-                </span>
-
-            </div>
-
-
-            <h3>
-                ${juego.nombre}
-            </h3>
-
-
-            <p class="autor">
-                👤 ${juego.autor}
-            </p>
-
-
-            <a
-                class="boton-jugar"
-                href="${ruta}"
-                target="_blank"
-            >
-                ▶ JUGAR
-            </a>
-
-        `;
-
-
-        contenedor.appendChild(tarjeta);
+        }
 
     });
 
-}
+
+    // Actualizar contador
+
+    contador.textContent =
+        encontrados;
 
 
-/* =========================================
-   BUSCADOR
-========================================= */
+    // Mostrar mensaje cuando no encuentra nada
 
-buscador.addEventListener(
-    "input",
-    function() {
+    if (encontrados === 0) {
 
-        const texto =
-            buscador.value.toLowerCase().trim();
+        sinResultados.style.display = "block";
+
+    } else {
+
+        sinResultados.style.display = "none";
+
+    }
+
+});
 
 
-        const resultados =
-            juegos.filter(function(juego) {
+// ==========================================
+// ANIMACIÓN AL APARECER
+// ==========================================
 
-                return (
+const observador =
+    new IntersectionObserver(
+        function (entradas) {
 
-                    juego.nombre
-                        .toLowerCase()
-                        .includes(texto)
+            entradas.forEach(function (entrada) {
 
-                    ||
+                if (entrada.isIntersecting) {
 
-                    juego.categoria
-                        .toLowerCase()
-                        .includes(texto)
+                    entrada.target.classList.add(
+                        "mostrar"
+                    );
 
-                    ||
-
-                    juego.autor
-                        .toLowerCase()
-                        .includes(texto)
-
-                );
+                }
 
             });
 
+        },
+        {
+            threshold: 0.1
+        }
+    );
 
-        mostrarJuegos(resultados);
 
-    }
-);
+juegos.forEach(function (juego) {
+
+    observador.observe(juego);
+
+});
 
 
-/* =========================================
-   CARGAR LOS JUEGOS AL ABRIR LA PÁGINA
-========================================= */
+// ==========================================
+// MENÚ SUAVE
+// ==========================================
 
-mostrarJuegos(juegos);
+const enlaces =
+    document.querySelectorAll(
+        'a[href^="#"]'
+    );
+
+
+enlaces.forEach(function (enlace) {
+
+    enlace.addEventListener(
+        "click",
+        function (evento) {
+
+            const destino =
+                document.querySelector(
+                    this.getAttribute("href")
+                );
+
+
+            if (destino) {
+
+                evento.preventDefault();
+
+                destino.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+    );
+
+});

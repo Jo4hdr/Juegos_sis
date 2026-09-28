@@ -2,139 +2,1095 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Juegos SIS</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Juegos Sistemas 11</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- ENCABEZADO -->
 
-    <header class="encabezado">
+    <!-- DECORACIÓN DE FONDO -->
 
-        <nav class="navbar">
+    <div class="hoja hoja-1">🍃</div>
+    <div class="hoja hoja-2">🌿</div>
+    <div class="hoja hoja-3">🍃</div>
 
-            <h2>🎮 JUEGOS SIS</h2>
 
-            <a href="#juegos">Juegos</a>
+    <!-- ==============================
+         MENÚ
+    =============================== -->
+
+    <header class="header">
+
+        <a href="#inicio" class="logo">
+
+            <div class="logo-icon">
+                🎮
+            </div>
+
+            <div>
+
+                <h1>Juegos Sistemas 11</h1>
+
+                <p>
+                    Especialidad en Sistemas
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#juegos">
+                Juegos
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
 
         </nav>
-
-        <div class="presentacion">
-
-            <p class="especialidad">
-                ESPECIALIDAD DE SISTEMAS
-            </p>
-
-            <h1>
-                Los juegos de nuestra clase
-            </h1>
-
-            <p class="descripcion">
-                Una colección de juegos modificados por los estudiantes
-                utilizando HTML, CSS y JavaScript.
-            </p>
-
-        </div>
 
     </header>
 
 
-    <!-- CONTENIDO PRINCIPAL -->
 
-    <main>
+    <!-- ==============================
+         PRESENTACIÓN
+    =============================== -->
 
-        <section class="contenido" id="juegos">
+    <section class="hero" id="inicio">
 
-            <div class="titulo">
+        <div class="hero-text">
 
-                <div>
-
-                    <h2>
-                        🎮 Explora los juegos
-                    </h2>
-
-                    <p id="cantidad">
-                        Mostrando todos los juegos
-                    </p>
-
-                </div>
+            <span class="mini-titulo">
+                COLEGIO GUANENTÁ · SISTEMAS 11
+            </span>
 
 
-                <!-- BUSCADOR -->
+            <h2>
+                Nuestra colección
+                <br>
+                <span>de juegos.</span>
+            </h2>
 
-                <div class="buscador">
 
-                    <span>🔎</span>
+            <p>
 
-                    <input
-                        type="text"
-                        id="buscar"
-                        placeholder="Buscar un juego..."
-                    >
+                Un espacio donde reunimos los diferentes juegos
+                desarrollados por los estudiantes de Sistemas 11,
+                utilizando programación, creatividad y muchas ganas
+                de aprender.
 
-                </div>
+            </p>
+
+
+            <div class="hero-botones">
+
+                <a href="#juegos" class="boton-principal">
+                    Explorar juegos
+                    <span>↓</span>
+                </a>
+
+                <a href="#nosotros" class="boton-secundario">
+                    Conocer el proyecto
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-ilustracion">
+
+            <div class="circulo-grande">
+
+                <span>🎮</span>
+
+            </div>
+
+            <div class="hojita h1">🌱</div>
+            <div class="hojita h2">🍃</div>
+            <div class="hojita h3">🌿</div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         ESTADÍSTICAS
+    =============================== -->
+
+    <section class="estadisticas">
+
+        <div class="estadistica">
+
+            <strong id="totalJuegos">
+                18
+            </strong>
+
+            <span>
+                Juegos
+            </span>
+
+        </div>
+
+
+        <div class="linea"></div>
+
+
+        <div class="estadistica">
+
+            <strong>
+                11
+            </strong>
+
+            <span>
+                Sistemas
+            </span>
+
+        </div>
+
+
+        <div class="linea"></div>
+
+
+        <div class="estadistica">
+
+            <strong>
+                2026
+            </strong>
+
+            <span>
+                Proyecto
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         JUEGOS
+    =============================== -->
+
+    <main id="juegos">
+
+
+        <div class="titulo">
+
+            <span>
+                NUESTRA COLECCIÓN
+            </span>
+
+            <h2>
+                Elige un juego
+            </h2>
+
+            <p>
+                Explora los proyectos creados por los estudiantes
+                de la especialidad en Sistemas.
+            </p>
+
+        </div>
+
+
+
+        <!-- BUSCADOR -->
+
+        <div class="herramientas">
+
+            <div class="buscador">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="buscador"
+                    placeholder="Buscar un juego..."
+                >
 
             </div>
 
 
-            <!-- AQUÍ APARECERÁN LOS JUEGOS -->
+            <div class="contador">
 
-            <div
-                id="contenedor-juegos"
-                class="contenedor-juegos"
-            >
+                <span id="contadorVisible">
+                    18
+                </span>
+
+                juegos encontrados
 
             </div>
 
+        </div>
 
-            <!-- AVISO -->
 
-            <div class="aviso">
 
-                <span>➕</span>
+        <!-- TARJETAS -->
 
-                <div>
+        <section class="juegos-grid" id="juegosGrid">
 
-                    <h3>
-                        Próximamente
-                    </h3>
 
-                    <p>
-                        Actualmente hay 19 juegos en el repositorio.
-                        Los juegos restantes se agregarán cuando sean entregados.
-                    </p>
+            <!-- 01 -->
 
+            <article
+                class="juego"
+                data-nombre="2084"
+                data-categoria="puzzle">
+
+                <span class="numero">
+                    01
+                </span>
+
+                <div class="juego-icono">
+                    🔢
                 </div>
 
-            </div>
+                <span class="categoria">
+                    PUZZLE
+                </span>
+
+                <h3>
+                    2084
+                </h3>
+
+                <p>
+                    Un juego de números donde tendrás que pensar
+                    y utilizar tu estrategia para avanzar.
+                </p>
+
+                <a
+                    href="./2084/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 02 -->
+
+            <article
+                class="juego"
+                data-nombre="busca minas"
+                data-categoria="estrategia">
+
+                <span class="numero">
+                    02
+                </span>
+
+                <div class="juego-icono">
+                    💣
+                </div>
+
+                <span class="categoria">
+                    ESTRATEGIA
+                </span>
+
+                <h3>
+                    Busca Minas
+                </h3>
+
+                <p>
+                    Descubre las casillas seguras y evita las minas
+                    escondidas en el tablero.
+                </p>
+
+                <a
+                    href="./Busca Minas/buscaminas_yo/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 03 -->
+
+            <article
+                class="juego"
+                data-nombre="condor guanenta"
+                data-categoria="aventura">
+
+                <span class="numero">
+                    03
+                </span>
+
+                <div class="juego-icono">
+                    🦅
+                </div>
+
+                <span class="categoria">
+                    AVENTURA
+                </span>
+
+                <h3>
+                    Cóndor Guanentá
+                </h3>
+
+                <p>
+                    Un juego inspirado en la identidad, naturaleza
+                    y cultura de nuestra región.
+                </p>
+
+                <a
+                    href="./Condor Guanenta/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 04 -->
+
+            <article
+                class="juego"
+                data-nombre="escape"
+                data-categoria="aventura">
+
+                <span class="numero">
+                    04
+                </span>
+
+                <div class="juego-icono">
+                    🚪
+                </div>
+
+                <span class="categoria">
+                    AVENTURA
+                </span>
+
+                <h3>
+                    Escape
+                </h3>
+
+                <p>
+                    Supera los obstáculos y encuentra la salida
+                    del escenario.
+                </p>
+
+                <a
+                    href="./Escape/version_1/juego.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 05 -->
+
+            <article
+                class="juego"
+                data-nombre="frogger"
+                data-categoria="arcade">
+
+                <span class="numero">
+                    05
+                </span>
+
+                <div class="juego-icono">
+                    🐸
+                </div>
+
+                <span class="categoria">
+                    ARCADE
+                </span>
+
+                <h3>
+                    Frogger
+                </h3>
+
+                <p>
+                    Ayuda al personaje a cruzar evitando todos
+                    los obstáculos del camino.
+                </p>
+
+                <a
+                    href="./Frogger/frogger_modificado/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 06 -->
+
+            <article
+                class="juego"
+                data-nombre="geometry dash"
+                data-categoria="plataformas">
+
+                <span class="numero">
+                    06
+                </span>
+
+                <div class="juego-icono">
+                    🟩
+                </div>
+
+                <span class="categoria">
+                    PLATAFORMAS
+                </span>
+
+                <h3>
+                    Geometry Dash
+                </h3>
+
+                <p>
+                    Salta, esquiva obstáculos y trata de llegar
+                    cada vez más lejos.
+                </p>
+
+                <a
+                    href="./Geometry Dash/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 07 -->
+
+            <article
+                class="juego"
+                data-nombre="gun fight"
+                data-categoria="accion">
+
+                <span class="numero">
+                    07
+                </span>
+
+                <div class="juego-icono">
+                    🎯
+                </div>
+
+                <span class="categoria">
+                    ACCIÓN
+                </span>
+
+                <h3>
+                    Gun Fight
+                </h3>
+
+                <p>
+                    Enfréntate a tus oponentes y demuestra
+                    tus habilidades.
+                </p>
+
+                <a
+                    href="./Gun Fight/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 08 -->
+
+            <article
+                class="juego"
+                data-nombre="pacman"
+                data-categoria="arcade">
+
+                <span class="numero">
+                    08
+                </span>
+
+                <div class="juego-icono">
+                    🟡
+                </div>
+
+                <span class="categoria">
+                    ARCADE
+                </span>
+
+                <h3>
+                    Pacman
+                </h3>
+
+                <p>
+                    Recorre el laberinto, recoge los puntos
+                    y evita a los enemigos.
+                </p>
+
+                <a
+                    href="./Pacman/version_modificada/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 09 -->
+
+            <article
+                class="juego"
+                data-nombre="piedra papel tijera"
+                data-categoria="clasico">
+
+                <span class="numero">
+                    09
+                </span>
+
+                <div class="juego-icono">
+                    ✊
+                </div>
+
+                <span class="categoria">
+                    CLÁSICO
+                </span>
+
+                <h3>
+                    Piedra, Papel o Tijera
+                </h3>
+
+                <p>
+                    El clásico juego de decisiones convertido
+                    en una versión digital.
+                </p>
+
+                <a
+                    href="./Piedra,Papel o Tijera/version2/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 10 -->
+
+            <article
+                class="juego"
+                data-nombre="pong sangileño"
+                data-categoria="arcade">
+
+                <span class="numero">
+                    10
+                </span>
+
+                <div class="juego-icono">
+                    🏓
+                </div>
+
+                <span class="categoria">
+                    ARCADE
+                </span>
+
+                <h3>
+                    Pong Sangileño
+                </h3>
+
+                <p>
+                    Una versión del clásico Pong realizada
+                    por estudiantes de Sistemas.
+                </p>
+
+                <a
+                    href="./Pong Sangileño/pongV2/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 11 -->
+
+            <article
+                class="juego"
+                data-nombre="san gil runner"
+                data-categoria="runner">
+
+                <span class="numero">
+                    11
+                </span>
+
+                <div class="juego-icono">
+                    🏃
+                </div>
+
+                <span class="categoria">
+                    RUNNER
+                </span>
+
+                <h3>
+                    San Gil Runner
+                </h3>
+
+                <p>
+                    Corre, evita obstáculos y trata de llegar
+                    cada vez más lejos.
+                </p>
+
+                <a
+                    href="./San Gil_Runner/vercion2/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 12 -->
+
+            <article
+                class="juego"
+                data-nombre="seahorse"
+                data-categoria="aventura">
+
+                <span class="numero">
+                    12
+                </span>
+
+                <div class="juego-icono">
+                    🌊
+                </div>
+
+                <span class="categoria">
+                    AVENTURA
+                </span>
+
+                <h3>
+                    Seahorse
+                </h3>
+
+                <p>
+                    Una aventura acuática llena de retos y
+                    elementos para explorar.
+                </p>
+
+                <a
+                    href="./Seahorse/version_2/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 13 -->
+
+            <article
+                class="juego"
+                data-nombre="slime blast"
+                data-categoria="accion">
+
+                <span class="numero">
+                    13
+                </span>
+
+                <div class="juego-icono">
+                    🟢
+                </div>
+
+                <span class="categoria">
+                    ACCIÓN
+                </span>
+
+                <h3>
+                    Slime Blast
+                </h3>
+
+                <p>
+                    Enfrenta diferentes desafíos en este juego
+                    lleno de movimiento y diversión.
+                </p>
+
+                <a
+                    href="./Slime Blast/Version 1.1/angelo's_slime_blast1.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 14 -->
+
+            <article
+                class="juego"
+                data-nombre="snake"
+                data-categoria="arcade">
+
+                <span class="numero">
+                    14
+                </span>
+
+                <div class="juego-icono">
+                    🐍
+                </div>
+
+                <span class="categoria">
+                    ARCADE
+                </span>
+
+                <h3>
+                    Snake
+                </h3>
+
+                <p>
+                    Haz crecer la serpiente recogiendo elementos
+                    y evita chocar contigo mismo.
+                </p>
+
+                <a
+                    href="./Snake /index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 15 -->
+
+            <article
+                class="juego"
+                data-nombre="space game"
+                data-categoria="espacial">
+
+                <span class="numero">
+                    15
+                </span>
+
+                <div class="juego-icono">
+                    🚀
+                </div>
+
+                <span class="categoria">
+                    ESPACIAL
+                </span>
+
+                <h3>
+                    Space Game
+                </h3>
+
+                <p>
+                    Viaja por el espacio y enfrenta diferentes
+                    retos durante la partida.
+                </p>
+
+                <a
+                    href="./Space Game/version_2/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 16 -->
+
+            <article
+                class="juego"
+                data-nombre="sudoku"
+                data-categoria="puzzle">
+
+                <span class="numero">
+                    16
+                </span>
+
+                <div class="juego-icono">
+                    🧩
+                </div>
+
+                <span class="categoria">
+                    PUZZLE
+                </span>
+
+                <h3>
+                    Sudoku
+                </h3>
+
+                <p>
+                    Pon a prueba tu lógica completando correctamente
+                    cada fila, columna y bloque.
+                </p>
+
+                <a
+                    href="./Sudoku/Sudoku Version 2/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 17 -->
+
+            <article
+                class="juego"
+                data-nombre="tetris"
+                data-categoria="puzzle">
+
+                <span class="numero">
+                    17
+                </span>
+
+                <div class="juego-icono">
+                    🟦
+                </div>
+
+                <span class="categoria">
+                    PUZZLE
+                </span>
+
+                <h3>
+                    Tetris
+                </h3>
+
+                <p>
+                    Acomoda las piezas y completa las líneas
+                    antes de que el tablero se llene.
+                </p>
+
+                <a
+                    href="./Tetris/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- 18 -->
+
+            <article
+                class="juego"
+                data-nombre="tetris sangileño"
+                data-categoria="puzzle">
+
+                <span class="numero">
+                    18
+                </span>
+
+                <div class="juego-icono">
+                    🟩
+                </div>
+
+                <span class="categoria">
+                    PUZZLE
+                </span>
+
+                <h3>
+                    Tetris Sangileño
+                </h3>
+
+                <p>
+                    Una versión propia del clásico Tetris creada
+                    por estudiantes de nuestra región.
+                </p>
+
+                <a
+                    href="./Tetris Sangileño/index.html"
+                    class="jugar">
+
+                    Jugar ahora
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
 
         </section>
+
+
+        <!-- CUANDO NO HAY RESULTADOS -->
+
+        <div id="sinResultados" class="sin-resultados">
+
+            <div>
+                🌱
+            </div>
+
+            <h3>
+                No encontramos ese juego
+            </h3>
+
+            <p>
+                Intenta buscar con otro nombre.
+            </p>
+
+        </div>
+
 
     </main>
 
 
-    <!-- PIE DE PÁGINA -->
+
+    <!-- ==============================
+         NOSOTROS
+    =============================== -->
+
+    <section class="nosotros" id="nosotros">
+
+        <div class="nosotros-texto">
+
+            <span class="mini-titulo">
+                SOBRE EL PROYECTO
+            </span>
+
+            <h2>
+                Hecho por
+                <span>Sistemas 11</span>
+            </h2>
+
+            <p>
+
+                Este sitio web reúne los diferentes juegos
+                desarrollados por los estudiantes de la especialidad
+                en Sistemas.
+
+                <br><br>
+
+                Cada juego representa una forma diferente de aplicar
+                lo aprendido en HTML, CSS y JavaScript, combinando
+                programación, creatividad y diseño.
+
+            </p>
+
+        </div>
+
+
+        <div class="numero-grande">
+
+            <strong>
+                18
+            </strong>
+
+            <span>
+                juegos reunidos
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
 
     <footer>
 
-        <h3>
-            🎮 Juegos SIS
-        </h3>
+        <div class="footer-logo">
+            🎮
+        </div>
 
-        <p>
-            Proyecto de Especialidad de Sistemas
-        </p>
+        <div>
 
-        <p>
-            Colegio San José de Guanentá · 2026
-        </p>
+            <strong>
+                Juegos Sistemas 11
+            </strong>
+
+            <p>
+                Especialidad en Sistemas · Colegio Guanentá
+            </p>
+
+        </div>
+
+        <span class="footer-hoja">
+            🌿
+        </span>
 
     </footer>
+
 
 
     <script src="script.js"></script>
